@@ -34,6 +34,7 @@ const SOURCE_SHEET_NAME = "Materials";                // Name of the source shee
 const OUTPUT_SHEET_NAME = "MarketData";               // Name of the output sheet
 const WORLD_MAP_RANGE = "Y2:Z86";                     // Range mapping world IDs to names
 const SOURCE_DATA_RANGE_START = "A2";                 // Starting cell for source data
+```
 
 ## Usage
 
