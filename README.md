@@ -8,13 +8,14 @@ This script is designed to integrate with Google Sheets to fetch and update Fina
 - Retrieves market data from the [Universalis API](https://universalis.app/).
 - Updates a Google Sheet with item prices, world names, average prices, and sale velocities.
 - Supports batch processing for efficient API calls.
+- Centralized configuration for easier customization.
 
 ## Requirements
 
 - A Google Sheet with the following sheets:
-  - **Source Sheet**: Contains item names to fetch data for (default: `Crafting & Acquisitions!`).
-  - **Output Sheet**: Receives the processed data (default: `XIVAPI Data`).
-- A hidden range in the output sheet (`Y2:Z86`) mapping world IDs to world names.
+  - **Source Sheet**: Contains item names to fetch data.
+  - **Output Sheet**: Receives the processed data.
+- A range in the output sheet mapping world IDs to world names.
 - Google Apps Script environment to run the script.
 
 ## Setup
@@ -23,6 +24,16 @@ This script is designed to integrate with Google Sheets to fetch and update Fina
 2. Go to **Extensions > Apps Script**.
 3. Copy and paste the contents of `FFXIV_Sheets_Api.ts` into the Apps Script editor.
 4. Save the script.
+
+## Configuration
+
+The script includes centralized configuration variables at the top for easier customization:
+
+```typescript
+const SOURCE_SHEET_NAME = "Materials";                // Name of the source sheet
+const OUTPUT_SHEET_NAME = "MarketData";               // Name of the output sheet
+const WORLD_MAP_RANGE = "Y2:Z86";                     // Range mapping world IDs to names
+const SOURCE_DATA_RANGE_START = "A2";                 // Starting cell for source data
 
 ## Usage
 
