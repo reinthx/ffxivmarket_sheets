@@ -38,9 +38,8 @@ const SOURCE_DATA_RANGE_START = "A2";                 // Starting cell for sourc
 
 ## Usage
 
-1. Ensure the source sheet contains item names in column `E` starting from row `5`.
-2. Run the `updateXivApiDataSheet` function from the Apps Script editor or set up a trigger to run it periodically.
-3. The script will:
+1. Run the `updateXivApiDataSheet` function from the Apps Script editor or set up a trigger to run it periodically.
+2. The script will:
    - Fetch item IDs from the Teamcraft data.
    - Retrieve market data from Universalis.
    - Update the output sheet with the following columns:
