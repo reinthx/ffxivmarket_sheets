@@ -5,6 +5,7 @@ const SOURCE_SHEET_NAME = "Materials";
 const OUTPUT_SHEET_NAME = "MarketData";
 const WORLD_MAP_RANGE = "Y2:Z86"; // This range is in the OUTPUT_SHEET (MarketData default)
 const SOURCE_DATA_RANGE_START = "E5"; // This value is in the SOURCE_SHEET (Materials default)
+const DATA_CENTER = "Aether"; // Acceptable values: Region {Japan, Europe, North-America, Oceania, China, 中国}, Data Center {Aether, Primal, Crystal, etc.} and Server {Gilgamesh, Adamantoise, etc.}
 ///////////////////////////////////////////////////////////////////////////
 
 function loadItemDataFromGitHub() {
@@ -67,7 +68,7 @@ function updateXivApiDataSheet() {
     for (let i = 0; i < itemIds.length; i += batchSize) {
         const batch = itemIds.slice(i, i + batchSize).join(",");
         Logger.log(`📦 Total items to update: ${itemIds.length}`);
-        const url = `https://universalis.app/api/v2/aggregated/Aether/${batch}`;
+        const url = `https://universalis.app/api/v2/aggregated/${DATA_CENTER}/${batch}`;
 
         try {
             const response = UrlFetchApp.fetch(url);
